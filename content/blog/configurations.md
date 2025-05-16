@@ -1,323 +1,254 @@
 ---
-title: Configurations
-date: 2022-08-14T21:34:36+08:00
-tags: ["hugo", "ladder", "Tutorial", "configurations"]
-series: ["how to create your blog"]
+title: 计算机网络与通信：从基本概念到常用协议
+date: 2025-05-01T21:34:36+08:00
+tags: ["计算机网络","ss"]
+series: ["计算机网络"]
 featured: true
 ---
-This article about how to configure this theme, and manage the content of the articles created.
 <!--more-->
-## Mini Configuration
+#### 一、计算机网络定义与功能
 
-Open the  `config.yml` file in the root directory with an editor and change the configuration as follows: 
+**定义**：计算机网络是将分布在不同地理位置的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统、网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。
 
-```yml
-baseURL: 'https://hugo-ladder.pages.dev' # set https://username.github.io
-homepage: 'https://hugo-ladder.pages.dev' # set https://username.github.io
-defaultContentLanguage: 'en' #default language
-params:
-  brand: HOME # set the brand of your site
-  avatarURL: /images/avatar.png # avatar, replace your avatar in the /static/images/
-  author: Hugo Ladder # name
-  authorDescription: # description
-  info:  this is a info # information of your blog site
-  favicon: /images/avatar.png # blog site icon，replace your avatar in the /static/images/
-  options:
-    showDarkMode: true # is show dark mode button
-    enableMultiLang: true # is show multi language button
-```
+**核心功能**
 
+**资源共享**：包括硬件资源（如打印机、存储设备）、软件资源（如应用程序、数据文件）和数据资源共享。
 
-# Configurations
+**数据通信**：实现不同计算机之间的信息传输，如电子邮件、文件传输、视频会议等。
 
-## About Hugo Configurations
+**分布式处理**：通过网络将复杂任务分配给多台计算机协同完成，提高系统效率。
 
-This theme supports:
+#### 二、计算机网络的组成
 
-* Analytics
-  * [Google Analytics](https://developers.google.com/analytics)
-  * [Google Tag Manager](https://developers.google.com/tag-manager)
-  * [umami](https://umami.is/)
-* Commenting Systems
-  * [Giscus](https://giscus.app/)
-  * [Utterances](https://utteranc.es/)
+**硬件系统**
 
-### Analytics
+**主机（Host）**：分为服务器（提供服务）和客户端（请求服务），是网络中数据处理和资源提供的核心设备。
 
-#### Google Analytics
+**网络终端设备**：如工作站、手机、平板电脑等，是用户接入网络的末端设备。
 
-Follow [these steps](https://gohugo.io/templates/internal/#configure-google-analytics).
+**通信设备**
 
-#### Google Tag Manager
+**传输介质**：分为有线（双绞线、同轴电缆、光纤）和无线（无线电波、微波、红外线）。
 
-Follow [these steps](https://developers.google.com/tag-manager).
+**中间设备**：集线器（物理层）、交换机（数据链路层）、路由器（网络层）、网关（高层协议转换）等。
 
-```yml
-params: 
-  analytics: 
-    google: 
-      SiteVerificationTag: gid
-```
+**软件系统**
 
-#### Umami Analytics
+**网络操作系统（NOS）**：如 Windows Server、Linux、UNIX，负责管理网络资源和协调网络通信。
 
-Follow [these steps](https://guangzhengli.com/blog/en/how-to-integrate-umami-for-free-to-blog-site/).
+**网络协议**：规定数据传输格式、顺序和控制方法的规则集合，如 TCP/IP、HTTP、FTP 等。
 
-```yml
-params: 
-  analytics: 
-    umami: 
-      enable: true
-      website_id: data-website-id
-      url: https://umami-ochre-nu.vercel.app/hugo-ladder.js
-```
+**网络应用程序**：实现具体网络功能的软件，如浏览器、邮件客户端、文件传输工具等。
 
-### Commenting Systems
+#### 三、计算机网络分类
 
-Comments are displayed within post pages and guestbook.
+**按覆盖范围分类**
 
-#### Giscus
+\| 类型 | 覆盖范围 | 典型应用场景 |
 
-Follow [these steps](https://giscus.app/).
+\|---|---|---|
 
-```yml
-params:
-  comments:
-    giscus:
-      enable: true
-      repo: username/reponame
-      repo_id: Rid
-      category: Announcements
-      category_id: DIC_id
-      mapping: pathname
-      position: top
-      lang: en # pick a language from https://github.com/giscus/giscus/tree/main/locales
-```
+\| 个人区域网（PAN）|10 米内 | 蓝牙设备连接 |
 
-#### Utterances
-Follow [these steps](https://utteranc.es/)
-```yml
-params:
-  comments:
-    utteranc:
-      enable: false
-      repo: username/reponame
-      issueTerm: pathname
-```
+\| 局域网（LAN）| 千米级（企业、校园）| 办公室网络、校园网 |
 
-## Theme Parameters
+\| 城域网（MAN）| 城市范围 | 城市公共服务网络 |
 
-These are all the parameters used by `hugo-coder` theme.
+\| 广域网（WAN）| 国家或全球范围 | Internet、长途通信网 |
 
-| Name                            | Type   | Required | Description                               | Default                                                      | Example                                                      |
-| ------------------------------- | ------ | -------- | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| baseURL                         | string | Yes      | Website URL                               |                                                              | `https://username.github.io`                                 |
-| title                           | string | Yes      | Website Name                              |                                                              | `"Ladder"`                                                   |
-| theme                           | string | Yes      | theme name, not change                    | `"hugo-theme-ladder"`                                        | `"hugo-theme-ladder"`                                        |
-| license                         | string | No       | License                                   | `"MIT"`                                                      | `"MIT"`                                                      |
-| licenselink                     | string | No       | License URL                               | '"https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE"' | '"https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE"' |
-| description                     | string | No       | Website Description                       |                                                              | `"'A fast, clean Hugo theme'"`                               |
-| defaultContentLanguage          | string | Yes      | Website default language                  | `"en"`                                                       | `"en"` or `"zh"`                                             |
-| googleAnalytics                 | string | No       | google analytics                          | `"G-xxx"`                                                    | ``"G-xxx"``                                                  |
-| enableRobotsTXT                 | string | No       | enable robots.txt                         | `true`                                                       | `true`                                                       |
-| paginate                        | number | Yes      | Default paginate                          | 10                                                           | 10                                                           |
-| params.brand                    | string | Yes      | brand                                     | `"HOME"`                                                     | `"LADDER"`                                                   |
-| params.avatarURL                | string | No       | Gravatar photo of the author              | `"/images/avatar.png"` `replace the photo or change the path` | `"/images/avatar.png"`                                       |
-| params.author                   | string | No       | Home page author name                     | `"Hugo Ladder"`                                              | `"Hugo Ladder"`                                              |
-| params.authorDescription        | string | No       | Home page author description              | `"A clean, fast hugo theme focused on Reading"`              | `"A clean, fast hugo theme focused on Reading"`              |
-| params.info                     | string | No       | Home page website info                    | `"Ladder is a clean, simple but beautiful theme with awesome features"` | `"Ladder is a clean, simple but beautiful theme with awesome features"` |
-| params.favicon                  | string | No       | icon photo of the website                 | `"/images/avatar.png"`                                       | `"/images/avatar.png"`                                       |
-| params.options.showDarkMode     | bool   | No       | enable dark mode button in nav            | `true`                                                       | `true`                                                       |
-| params.options.enableImgZooming | bool   | No       | enable zooming when click img within post | `true`                                                       | `true`                                                       |
-| params.options.enableMultiLang  | bool   | No       | enable multi-language support             | `true`                                                       | `false`                                                      |
-| params.darkModeTheme            | string | yes      | Adds theme for dark mode                  | `data-dark-mode`                                             | `data-dark-mode` or `icy-dark-mode`                          |
-| params.guestbook.title          | string | No       | guestbooke title                          | `"Guestbook"`                                                | `"Guestbook"`                                                |
-| params.guestbook.description    | string | No       | guestbooke description                    | `"Leave a comment below. It could be anything –- question, appreciation, information, or even humor."` | `"Leave a comment below. It could be anything –- question, appreciation, information, or even humor."` |
-| taxonomies.series               | string | Yes      | enable series                             | `"series"`                                                   | `"series"`                                                   |
-| ptaxonomies.tags                | string | Yes      | enable tags                               | `"tags"`                                                     | `"tags"`                                                     |
+**按拓扑结构分类**
 
-### Social Icons Configuration
+**总线型**：所有节点连接到一条公共总线，如早期以太网（易广播风暴，故障诊断困难）。
 
-Social Icons are optional. To use them you will need to set at least all the following required parameters for each icon.
+**星型**：节点通过中央节点（交换机）连接（易于维护，中央节点为瓶颈）。
 
-| Configuration | Type   | Required | Description      | Example                               |
-| ------------- | ------ | -------- | ---------------- | ------------------------------------- |
-| name          | string | Yes      | Icon name.       | `"Github"`                            |
-| pre           | string | Yes      | icon svg.        | `"find in https://feathericons.com/"` |
-| url           | string | Yes      | URL to redirect. | `"https://github.com/guangzhengli/"`  |
+**环型**：节点连接成环，数据单向传输（适用于实时性要求高场景，环路故障影响全局）。
 
-An example:
+**网状型**：节点间多路径连接（可靠性高，成本复杂，用于广域网）。
 
-```yml
-  social:
-    - name: GitHub
-      pre: >-
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      url: 'https://github.com/guangzhengli/hugo-theme-ladder'
-    - name: Dashboard
-      pre: >-
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-      url: 'https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite'
-```
+**按传输技术分类**
 
-### Menu Items Configurations
+**广播式网络**：共享传输介质，数据向所有节点发送（如局域网）。
 
-Menu Items are optional. To use them you will need to set all the following required parameters for each icon.
+**点对点网络**：通过路由算法选择路径，逐跳传输（如广域网）。
 
-| Configuration | Type   | Required | Description      | Example   |
-| ------------- | ------ | -------- | ---------------- | --------- |
-| name          | string | Yes      | Menu Item name.  | `"Blog"`  |
-| weight        | int    | Yes      | Menu Item order. | `1`       |
-| url           | string | Yes      | URL to redirect. | `"/blog"` |
+#### 四、网络体系结构与协议模型
 
-An example:
+**三种网络模型对比**：五层协议的体系结构只是为介绍网络原理而设计的，实际应用还是 TCP/IP 四层体系结构。而七层模型（OSI 模型）则提供了一种更为细致的理论分层结构，用于理解和设计各个层次的功能和协议。
 
-```yml
-menu:
-  main:
-    - name: Blog
-      url: /blog
-      weight: 1
-    - name: Tags
-      url: /tags
-      weight: 2
-    - name: Archive
-      url: /archives
-      weight: 3
-    - name: Guestbook
-      url: /guestbook
-      weight: 4
-    - name: Dashboard
-      url: https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite
-      weight: 5
-```
+**OSI 七层模型（开放式系统互联参考模型）**
 
-## Complete Example
+\| 层次 | 功能描述 | 典型协议 / 技术 |
 
-This is a complete configuration example with some recommended values.
+\|---|---|---|
 
-```yml
-baseURL: 'https://hugo-ladder.pages.dev'
-title: LADDER
-theme: hugo-theme-ladder
-license: MIT
-licenselink: 'https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE'
-description: 'A fast, clean Hugo theme'
-homepage: 'https://hugo-ladder.pages.dev'
-defaultContentLanguage: 'en'
-googleAnalytics: G-4WXJ5TEK2S
-paginate: 10
-menu:
-  main:
-    - name: Blog
-      url: /blog
-      weight: 1
-    - name: Tags
-      url: /tags
-      weight: 2
-    - name: Archive
-      url: /archives
-      weight: 3
-    - name: Guestbook
-      url: /guestbook
-      weight: 4
-    - name: Dashboard
-      url: https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite
-      weight: 5
-params:
-  brand: HOME
-  avatarURL: /images/avatar.png
-  author: Hugo Ladder
-  authorDescription: A clean, fast hugo theme focused on Reading
-  info: Ladder is a clean, simple but beautiful theme with awesome features
-  favicon: /images/avatar.png
-  options:
-    showDarkMode: true
-    enableImgZooming: true
-    enableMultiLang: true
-  darkModeTheme: data-dark-mode
-  #darkModeTheme: icy-dark-mode
-  comments:
-    giscus:
-      enable: true
-      repo: guangzhengli/hugo-ladder-exampleSite
-      repo_id: R_kgDOHyVOjg
-      category: Announcements
-      category_id: DIC_kwDOHyVOjs4CQsH7
-      mapping: pathname
-      position: top
-      lang: en # pick a language from https://github.com/giscus/giscus/tree/main/locales
-    utteranc:
-      enable: false
-      repo: guangzhengli/blog-comments
-      issueTerm: pathname
-  analytics:
-    google:
-      SiteVerificationTag: xxx
-    umami:
-      enable: true
-      website_id: 2320eaa6-a90b-471c-b6ca-e79dadde8c4c
-      url: https://umami-ochre-nu.vercel.app/hugo-ladder.js
-  guestbook:
-    title: Guestbook
-    description: Leave a comment below. It could be anything –- question, appreciation, information, or even humor.
-  social:
-    - name: GitHub
-      pre: >-
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      url: 'https://github.com/guangzhengli/hugo-theme-ladder'
-    - name: Dashboard
-      pre: >-
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-      url: 'https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite'
-languages:
-  en:
-    languageName: EN
-  zh:
-    languageName: 中
-    author: Ladder 主题
-    authorDescription: 一个美观，快速并且专注于阅读的主题
-    info: 帮助开发者构建一个免费并且漂亮的博客网站，记录自己的思考并且提高自己的影响力
-    guestbook:
-      title: 留言板
-      description: 您的评论，会让该网站更精彩！
-    menu:
-      main:
-        - name: 文章
-          url: /blog
-          weight: 1
-        - name: 分类
-          url: /tags
-          weight: 2
-        - name: 历史文章
-          url: /archives
-          weight: 3
-        - name: 留言板
-          url: /guestbook
-          weight: 4
-        - name: 网站统计
-          url: https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite
-          weight: 5
-taxonomies:
-  series: series
-  tag: tags
+\| 应用层 | 为用户提供直接服务（如文件传输、网页浏览）|HTTP、FTP、SMTP、DNS|
 
-```
+\| 表示层 | 数据格式转换（加密、压缩、编码）|JPEG、SSL/TLS|
 
-## Content Management
+\| 会话层 | 建立、管理和终止应用程序间的会话 | RPC、NFS|
 
-If you create a new posts, it is recommended to fill the configuration which means:
+\| 传输层 | 端到端的数据传输（可靠 / 不可靠），实现流量控制和差错校验 | TCP、UDP|
 
-```markdown
-title: 
-date: {{ .Date }}
-tags: []
-series: []
-featured: true
-```
+\| 网络层 | 分组路由与寻址，实现不同网络间的通信 | IP、ICMP、ARP、RIP、OSPF|
 
-* `title` post title
-* `date` published date
-* `tags` tags
-* `series` series, it will be show related post below the content.
-* `featured` it will be show in home page featured post, `true` or `false`
+\| 数据链路层 | 相邻节点间帧的传输，错误检测和链路管理 | Ethernet、PPP、VLAN|
+
+\| 物理层 | 定义物理连接特性（电压、接口、传输速率），传输比特流 | RJ45、光纤、IEEE 802.3|
+
+**TCP/IP 四层模型（实际应用模型）**
+
+**应用层**：对应 OSI 应用层、表示层、会话层。
+
+**传输层**：同 OSI 传输层（TCP/UDP）。
+
+**网络层**：同 OSI 网络层（IP 协议）。
+
+**网络接口层**：合并 OSI 数据链路层和物理层。
+
+#### 五、常用网络协议与服务
+
+**传输层协议**
+
+**TCP（传输控制协议）**：面向连接、可靠传输、字节流服务，支持流量控制和拥塞控制（如 HTTP、FTP 依赖 TCP）。
+
+**UDP（用户数据报协议）**：无连接、不可靠传输、数据报服务，效率高（如视频流、DNS、DHCP 使用 UDP）。
+
+**网络层协议**
+
+**IP（网际协议）**：提供无连接的分组传输服务，定义 IP 地址（IPv4/IPv6）和路由机制。
+
+**ARP（地址解析协议）**：将 IP 地址映射为 MAC 地址。
+
+**ICMP（互联网控制报文协议）**：用于网络故障诊断（如 ping 命令）。
+
+**应用层协议**
+
+**HTTP（超文本传输协议）**：Web 浏览器与服务器通信的基础（默认端口 80）。
+
+**HTTPS**：HTTP+SSL/TLS，加密传输（默认端口 443）。
+
+**FTP（文件传输协议）**：用于文件上传和下载（控制端口 21，数据端口 20）。
+
+**SMTP/POP3/IMAP**：邮件传输协议（SMTP 发信，POP3/IMAP 收信）。
+
+**DNS（域名系统）**：将域名解析为 IP 地址（端口 53）。
+
+#### 六、网络设备工作层次
+
+| 设备  | 工作层次 | 功能特点 |
+| --- | --- | --- |
+| 集线器 | 物理层 | 简单信号放大，共享带宽，广播式传输（已淘汰） |
+| 交换机 | 数据链路层 | 基于 MAC 地址寻址，实现端口间独占带宽，支持 VLAN 划分 |
+| 路由器 | 网络层 | 基于 IP 地址路由，连接不同网络（如 LAN 与 WAN），支持 ACL 访问控制 |
+| 网关  | 高层（4 - 7 层） | 实现不同协议栈转换（如局域网与广域网、IPv4 与 IPv6） |
+
+#### 练习题
+
+**单选题**
+
+在 OSI 模型中，负责端到端可靠传输的是哪一层？
+
+A. 网络层
+
+B. 传输层
+
+C. 数据链路层
+
+D. 应用层
+
+答案：B
+
+解析：传输层（如 TCP）提供端到端的可靠数据传输，通过序列号、确认机制和重传策略保证数据完整性。
+
+以下哪个协议属于无连接传输协议？
+
+A. TCP
+
+B. HTTP
+
+C. UDP
+
+D. FTP
+
+答案：C
+
+解析：UDP 无需建立连接，直接发送数据报，属于无连接不可靠传输，适合对实时性要求高的场景。
+
+路由器工作在 OSI 模型的哪一层？
+
+A. 物理层
+
+B. 数据链路层
+
+C. 网络层
+
+D. 传输层
+
+答案：C
+
+解析：路由器基于 IP 地址（网络层地址）进行路由选择，实现不同网络间的通信。
+
+**多选题**
+
+以下属于计算机网络核心功能的有哪些？
+
+A. 资源共享
+
+B. 数据通信
+
+C. 分布式处理
+
+D. 病毒防护
+
+答案：ABC
+
+解析：计算机网络的三大核心功能是资源共享、数据通信和分布式处理，病毒防护属于安全范畴，非核心功能。
+
+下列哪些属于传输层协议？
+
+A. IP
+
+B. TCP
+
+C. UDP
+
+D. HTTP
+
+答案：BC
+
+解析：传输层主要协议是 TCP 和 UDP；IP 属于网络层，HTTP 属于应用层。
+
+以下属于有线传输介质的有哪些？
+
+A. 双绞线
+
+B. 光纤
+
+C. 无线电波
+
+D. 同轴电缆
+
+答案：ABD
+
+解析：无线电波属于无线传输介质，双绞线、光纤、同轴电缆是常见有线介质。
+
+**判断题**
+
+TCP/IP 模型中的网络接口层对应 OSI 模型的数据链路层和物理层。（ ）
+
+答案：√
+
+解析：TCP/IP 网络接口层整合了 OSI 最底层两层，负责物理连接和帧传输。
+
+交换机是基于 IP 地址进行数据转发的。（ ）
+
+答案：×
+
+解析：交换机工作在数据链路层，基于 MAC 地址转发数据；路由器基于 IP 地址转发。
+
+UDP 协议提供可靠的面向连接传输服务。（ ）
+
+答案：×
+
+解析：UDP 是无连接、不可靠的传输协议，TCP 才是面向连接的可靠传输。
